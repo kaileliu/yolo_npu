@@ -1,0 +1,51 @@
+{
+  "image": "seed=2026 random 720x1280; numerical/speed test, not accuracy dataset",
+  "model": "models/best_640x640_heads_fp16.rknn",
+  "runs": 10,
+  "cpu_runs": 5,
+  "input_shape": [
+    640,
+    640
+  ],
+  "sdk_version": "==============================================\nRKNN VERSION:\n  API: 2.3.2 (429f97ae6b@2025-04-09T09:09:27)\n  DRV: 0.9.8\n==============================================\n",
+  "cpu_decode_max_abs_xywhr": 6.103515625e-05,
+  "nms_oracle_candidates": 420,
+  "npu_vs_cpu": {
+    "mean_abs_xywh_pixels": 0.22081492841243744,
+    "max_abs_xywh_pixels": 26.04547119140625,
+    "mean_abs_angle_rad": 0.005789459217339754,
+    "max_abs_score": 0.0002810591831803322
+  },
+  "detections": {
+    "conf": 0.5,
+    "cpu": [],
+    "npu": []
+  },
+  "npu_pipeline": {
+    "median_ms": 87.5420834927354,
+    "p95_ms": 107.76915030583041,
+    "mean_ms": 90.64643740130123
+  },
+  "npu_runtime": {
+    "median_ms": 73.6915800080169,
+    "p95_ms": 93.68198684969684,
+    "mean_ms": 76.72543749504257
+  },
+  "cpu_same_shape_pipeline": {
+    "median_ms": 684.3992880021688,
+    "p95_ms": 717.5086583883967,
+    "mean_ms": 690.4993748001289
+  },
+  "same_shape_speedup": 7.817946074575241,
+  "original_default_imgsz": [
+    1280,
+    1280
+  ],
+  "original_preprocessed_shape": [
+    1,
+    3,
+    736,
+    1280
+  ],
+  "status": "passed"
+}
