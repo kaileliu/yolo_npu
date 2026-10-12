@@ -1,5 +1,15 @@
 # Piper YOLO 的 RK3588 NPU 实现
 
+## GitHub release assets
+
+The Git repository contains the service code, runtime dependencies, tests and metadata. The RKNN model files and `librknnrt.so` are distributed in the release asset `yolo_npu-rk3588-assets.tar.gz` because GitHub's contents API cannot reliably accept these binary sizes. After cloning, run:
+
+```bash
+bash download_assets.sh
+```
+
+The script extracts the release asset into `models/` and `runtime/` so the normal startup command works unchanged.
+
 已经在这台 **Rockchip RK3588 XIUOS Board** 上完成模型转换、真实 NPU 推理、CPU 数值对照和 HTTP 联调。实现、模型、依赖、运行库、测试数据与报告均放在 `/root/yolo_npu`。原项目代码和虚拟环境不需要修改。
 
 直接启动：
