@@ -1,0 +1,51 @@
+{
+  "image": "seed=2026 random 720x1280; numerical/speed test, not accuracy dataset",
+  "model": "/root/yolo_npu/models/best_736x1280_heads_fp16.rknn",
+  "runs": 10,
+  "cpu_runs": 5,
+  "input_shape": [
+    736,
+    1280
+  ],
+  "sdk_version": "==============================================\nRKNN VERSION:\n  API: 2.3.2 (429f97ae6b@2025-04-09T09:09:27)\n  DRV: 0.9.8\n==============================================\n",
+  "cpu_decode_max_abs_xywhr": 0.0001220703125,
+  "nms_oracle_candidates": 3000,
+  "npu_vs_cpu": {
+    "mean_abs_xywh_pixels": 0.03114907443523407,
+    "max_abs_xywh_pixels": 15.474376678466797,
+    "mean_abs_angle_rad": 0.003927832469344139,
+    "max_abs_score": 0.00028841476887464523
+  },
+  "detections": {
+    "conf": 0.5,
+    "cpu": [],
+    "npu": []
+  },
+  "npu_pipeline": {
+    "median_ms": 199.38837601512205,
+    "p95_ms": 218.41901535226495,
+    "mean_ms": 197.90308150695637
+  },
+  "npu_runtime": {
+    "median_ms": 174.1415135038551,
+    "p95_ms": 192.72450030694014,
+    "mean_ms": 172.99248460913077
+  },
+  "cpu_same_shape_pipeline": {
+    "median_ms": 1327.053432003595,
+    "p95_ms": 1402.003113803221,
+    "mean_ms": 1349.5198144053575
+  },
+  "same_shape_speedup": 6.65562084673857,
+  "original_default_imgsz": [
+    1280,
+    1280
+  ],
+  "original_preprocessed_shape": [
+    1,
+    3,
+    736,
+    1280
+  ],
+  "status": "passed"
+}
