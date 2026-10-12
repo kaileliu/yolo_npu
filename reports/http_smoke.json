@@ -1,0 +1,75 @@
+{
+  "checks": [
+    "health, model size and original class mapping",
+    "local librknnrt loaded; server has no libtorch",
+    "real image, nonempty detection, OBB radians and bbox degrees",
+    "case-insensitive substring filtering and empty result",
+    "invalid images, thresholds, empty body and unknown routes",
+    "four concurrent requests share one NPU context correctly",
+    "SIGTERM exits cleanly and releases runtime"
+  ],
+  "sample": "samples/camera_calibration/calib_006.jpg",
+  "health": {
+    "success": true,
+    "status": "ok",
+    "device": "rk3588-npu",
+    "model_path": "/root/yolo_npu/models/best_736x1280_heads_fp16.rknn",
+    "runtime_path": "/root/yolo_npu/runtime/librknnrt.so",
+    "classes": {
+      "0": "carrot",
+      "1": "potato",
+      "2": "tomato"
+    },
+    "default_conf": 0.8,
+    "default_iou": 0.45,
+    "input_size": [
+      736,
+      1280
+    ],
+    "core_mask": 7,
+    "precision": "fp16",
+    "sdk_version": "==============================================\nRKNN VERSION:\n  API: 2.3.2 (429f97ae6b@2025-04-09T09:09:27)\n  DRV: 0.9.8\n==============================================\n"
+  },
+  "example_response": {
+    "success": true,
+    "message": "1 detection(s)",
+    "image_size": [
+      720,
+      1280
+    ],
+    "inference_ms": 220.8,
+    "timings_ms": {
+      "preprocess": 26.89,
+      "queue": 0.01,
+      "npu": 189.0,
+      "postprocess": 4.94,
+      "total": 220.85
+    },
+    "detections": [
+      {
+        "object_name": "tomato",
+        "class_id": 2,
+        "confidence": 0.8260111808776855,
+        "obb": [
+          1231.9683837890625,
+          40.70249557495117,
+          93.49478149414062,
+          81.10466003417969,
+          -0.017709173262119293
+        ],
+        "bbox_2d": [
+          1185.2209930419922,
+          0.15016555786132812,
+          1278.7157745361328,
+          81.25482559204102,
+          -1.01466088658536
+        ]
+      }
+    ]
+  },
+  "npu_load_samples": [
+    "NPU load:  Core0: 11%, Core1:  1%, Core2:  1%,",
+    "NPU load:  Core0: 42%, Core1:  4%, Core2:  4%,"
+  ],
+  "status": "passed"
+}
