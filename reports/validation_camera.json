@@ -1,0 +1,99 @@
+{
+  "image": "/root/yolo_npu/samples/camera_calibration/calib_006.png",
+  "model": "/root/yolo_npu/models/best_736x1280_heads_fp16.rknn",
+  "runs": 10,
+  "cpu_runs": 5,
+  "input_shape": [
+    736,
+    1280
+  ],
+  "sdk_version": "==============================================\nRKNN VERSION:\n  API: 2.3.2 (429f97ae6b@2025-04-09T09:09:27)\n  DRV: 0.9.8\n==============================================\n",
+  "cpu_decode_max_abs_xywhr": 0.0001220703125,
+  "nms_oracle_candidates": 925,
+  "npu_vs_cpu": {
+    "mean_abs_xywh_pixels": 0.14775621891021729,
+    "max_abs_xywh_pixels": 29.797882080078125,
+    "mean_abs_angle_rad": 0.004305457230657339,
+    "max_abs_score": 0.02412247657775879
+  },
+  "detections": {
+    "conf": 0.5,
+    "cpu": [
+      {
+        "object_name": "tomato",
+        "class_id": 2,
+        "confidence": 0.7145689725875854,
+        "obb": [
+          1232.1929931640625,
+          42.51600646972656,
+          91.55644989013672,
+          80.72652435302734,
+          -0.06843507289886475
+        ],
+        "bbox_2d": [
+          1186.4147682189941,
+          2.1527442932128906,
+          1277.9712181091309,
+          82.87926864624023,
+          -3.9210408477750702
+        ]
+      }
+    ],
+    "npu": [
+      {
+        "object_name": "tomato",
+        "class_id": 2,
+        "confidence": 0.6932653188705444,
+        "obb": [
+          1232.2239990234375,
+          42.457977294921875,
+          91.54116821289062,
+          80.84446716308594,
+          -0.07562266290187836
+        ],
+        "bbox_2d": [
+          1186.4534149169922,
+          2.0357437133789062,
+          1277.9945831298828,
+          82.88021087646484,
+          -4.332859419818172
+        ]
+      }
+    ]
+  },
+  "detection_comparison": {
+    "same_classes_and_count_in_score_order": true,
+    "max_abs_xywh_pixels": 0.11794281005859375,
+    "max_abs_angle_degrees": 0.41181857204310257,
+    "max_abs_confidence": 0.021303653717041016
+  },
+  "npu_pipeline": {
+    "median_ms": 186.15858900011517,
+    "p95_ms": 219.39973890548572,
+    "mean_ms": 191.5607238013763
+  },
+  "npu_runtime": {
+    "median_ms": 160.55026550020557,
+    "p95_ms": 191.852656941046,
+    "mean_ms": 165.63255520304665
+  },
+  "cpu_same_shape_pipeline": {
+    "median_ms": 1339.2177000059746,
+    "p95_ms": 1414.479388599284,
+    "mean_ms": 1346.0144323995337
+  },
+  "same_shape_speedup": 7.193961380987616,
+  "cpu_image_coordinate_parity": true,
+  "original_default_imgsz": [
+    1280,
+    1280
+  ],
+  "original_preprocessed_shape": [
+    1,
+    3,
+    736,
+    1280
+  ],
+  "status": "passed",
+  "scope": "Decode/NMS/coordinate checks and speed; not a labeled accuracy evaluation"
+}
