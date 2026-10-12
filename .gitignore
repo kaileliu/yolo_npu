@@ -1,0 +1,13 @@
+.cache/
+__pycache__/
+*.pyc
+runtime_deps/
+runtime_python/
+converter_python/
+convert_deps/
+
+# Local Codex/session artifact; unrelated to the detector project.
+codex-models*.json
+
+# Optional conversion SDK wheel; setup_conversion.sh can fetch it when needed.
+vendor/rknn_toolkit2-*.whl
